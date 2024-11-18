@@ -1,6 +1,6 @@
 import React from 'react';
 import {SafeAreaView, StatusBar} from 'react-native';
-import Root from './src/root';
+import Root from './src/Root';
 
 const App = () => {
   return (
