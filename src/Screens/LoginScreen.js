@@ -1,11 +1,15 @@
 import React from 'react';
-import {Button, Text} from 'react-native';
+import {Text} from 'react-native';
 import ScreenEnums from './ScreenEnums';
+import MIcon from 'react-native-vector-icons/AntDesign';
+import {Button} from 'react-native-paper';
 
 const LoginScreen = props => {
   return (
     <>
       <Text>Login</Text>
+      <MIcon name={'plus'} size={22} color={'red'} />
+      <Button icon="access-point-plus">Press me</Button>
       <Button
         title={'Test'}
         onPress={() => {
