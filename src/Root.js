@@ -1,7 +1,8 @@
 import React from 'react';
-import {ActivityIndicator, useColorScheme} from 'react-native';
+import {SafeAreaView, StatusBar, useColorScheme} from 'react-native';
 import {PaperProvider} from 'react-native-paper';
 import {DarkTheme, LightTheme} from './Theme/colors';
+import RootNavigation from './RootNavigation';
 
 const Root = props => {
   const colorScheme = useColorScheme();
@@ -9,9 +10,12 @@ const Root = props => {
   const paperTheme = colorScheme === 'dark' ? {...DarkTheme} : {...LightTheme};
 
   return (
-    <PaperProvider theme={paperTheme}>
-      <ActivityIndicator animating={true} />
-    </PaperProvider>
+    <SafeAreaView style={{flex: 1}}>
+      <StatusBar barStyle={'dark-content'} />
+      <PaperProvider theme={paperTheme}>
+        <RootNavigation />
+      </PaperProvider>
+    </SafeAreaView>
   );
 };
 
