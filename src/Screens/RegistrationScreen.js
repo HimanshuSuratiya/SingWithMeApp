@@ -1,12 +1,13 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import CustomButton from '../Component/CustomButton';
+import ScreenEnums from './ScreenEnums';
 import RegisterLoginWithSocialMedia from '../Component/RegisterLoginWithSocialMedia';
 import DividerWithText from '../Component/DividerWithText';
 import HeadingLarge from '../Component/TextsComp/HeadingLarge';
 import {useTheme} from 'react-native-paper';
 
-const LoginScreen = ({navigation}) => {
+const RegistrationScreen = ({navigation}) => {
   const {colors} = useTheme();
 
   return (
@@ -18,17 +19,23 @@ const LoginScreen = ({navigation}) => {
             textAlign: 'left',
             marginBottom: 8,
           }}
-          title={'Welcome back! Glad to see you, Again!'}
+          title={'Hello! Register to get started'}
         />
-        <CustomButton filled={true} title="Login" />
-        <DividerWithText title={'Or Login with'} />
+        <CustomButton
+          filled={true}
+          title="Registration"
+          handleClick={() => {
+            navigation.navigate(ScreenEnums.FillProfile);
+          }}
+        />
+        <DividerWithText title={'Or Register with'} />
         <RegisterLoginWithSocialMedia />
       </View>
     </>
   );
 };
 
-export default LoginScreen;
+export default RegistrationScreen;
 
 const styles = StyleSheet.create({
   container: {

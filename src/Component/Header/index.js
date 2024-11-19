@@ -1,16 +1,24 @@
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {StyleSheet, TouchableOpacity, View} from 'react-native';
 import React from 'react';
+import MCommunity from 'react-native-vector-icons/MaterialCommunityIcons';
+import {useTheme} from 'react-native-paper';
+import {Text} from 'react-native-paper';
 
 const CustomHeader = ({navigation, title}) => {
+  const {colors} = useTheme();
+
   return (
     <View style={styles.header}>
-      <TouchableOpacity onPress={() => navigation.goBack()}>
-        <Text style={styles.backButton}>Back</Text>
+      <TouchableOpacity
+        style={[styles.headerBack, {borderColor: colors.iconBorderColor}]}
+        onPress={() => navigation.goBack()}>
+        <MCommunity
+          name={'chevron-left'}
+          size={30}
+          color={colors.headerIconColor}
+        />
       </TouchableOpacity>
-      <Text style={styles.title}>{title}</Text>
-      <TouchableOpacity onPress={() => alert('Menu clicked')}>
-        <Text style={styles.menuButton}>Menu</Text>
-      </TouchableOpacity>
+      {title && <Text style={styles.title}>{title}</Text>}
     </View>
   );
 };
@@ -18,30 +26,17 @@ const CustomHeader = ({navigation, title}) => {
 export default CustomHeader;
 
 const styles = StyleSheet.create({
-  screen: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
   header: {
     height: 60,
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between',
-    backgroundColor: '#6200ee',
-    paddingHorizontal: 10,
+    paddingHorizontal: 16,
   },
-  backButton: {
-    color: 'white',
-    fontSize: 16,
-  },
-  title: {
-    color: 'white',
-    fontSize: 18,
-    fontWeight: 'bold',
-  },
-  menuButton: {
-    color: 'white',
-    fontSize: 16,
+  headerBack: {
+    borderWidth: 1,
+    height: 41,
+    width: 41,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });

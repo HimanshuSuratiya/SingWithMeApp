@@ -1,4 +1,7 @@
-export default {
-  About: 'About',
+const ScreenEnums = {
   Login: 'Login',
+  Startup: 'Startup',
+  Registration: 'Registration',
+  FillProfile: 'FillProfile',
 };
+export default ScreenEnums;
