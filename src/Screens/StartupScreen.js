@@ -13,7 +13,7 @@ const StartupScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
       <View style={styles.icon}>
-        <FontAwesome name={'photo'} size={60} color={colors.black} />
+        <FontAwesome name={'photo'} size={60} color={colors.Primary} />
       </View>
       <CustomText
         customStyle={styles.heading}
@@ -64,7 +64,7 @@ const createStyles = colors =>
       marginTop: 24,
       fontWeight: 'bold',
       fontSize: 14,
-      color: colors.black,
+      color: colors.PrimaryText,
       textDecorationLine: 'underline',
       textAlign: 'center',
     },
@@ -74,6 +74,6 @@ const createStyles = colors =>
       letterSpacing: 0,
       lineHeight: 36,
       textAlign: 'center',
-      color: colors.black,
+      color: colors.PrimaryText,
     },
   });

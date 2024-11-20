@@ -2,6 +2,7 @@ import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {useTheme} from 'react-native-paper';
 import CustomText from '../CustomText';
+import SmallBold from "../TextsComp/SmallBold";
 
 const DividerWithText = ({title}) => {
   const {colors} = useTheme();
@@ -10,11 +11,7 @@ const DividerWithText = ({title}) => {
   return (
     <View style={styles.divider}>
       <View style={styles.dividerLine} />
-      <CustomText
-        variant="titleSmall"
-        customStyle={styles.dividerText}
-        title={title}
-      />
+      <SmallBold title={title} receiveStyle={{marginHorizontal: 10}}/>
       <View style={styles.dividerLine} />
     </View>
   );
